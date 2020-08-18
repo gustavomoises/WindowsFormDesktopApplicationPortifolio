@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TableReadyModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerFirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CustomerLastName" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Layouts">
+    <Key>
+      <PropertyRef Name="LayoutId" />
+    </Key>
+    <Property Name="LayoutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RestaurantID" Type="int" Nullable="false" />
+    <Property Name="LayoutName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LayoutImage" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ReservationEntry">
+    <Key>
+      <PropertyRef Name="ReservationID" />
+    </Key>
+    <Property Name="ReservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="RestaurantID" Type="int" />
+    <Property Name="PartySize" Type="smallint" Nullable="false" />
+    <Property Name="ReservationStatus" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EntryOrigin" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreationDateTime" Type="datetime" Nullable="false" />
+    <Property Name="ReservationDateTime" Type="datetime" Nullable="false" />
+    <Property Name="CheckinDateTime" Type="datetime" />
+    <Property Name="SeatingDateTime" Type="datetime" />
+    <Property Name="CheckoutDateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReservationEntryTable">
+    <Key>
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="ReservationID" />
+    </Key>
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="ReservationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Restaurants">
+    <Key>
+      <PropertyRef Name="RestaurantId" />
+    </Key>
+    <Property Name="RestaurantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RestaurantName" Type="varchar" MaxLength="40" />
+    <Property Name="LayoutActive" Type="int" />
+  </EntityType>
+  <EntityType Name="TableAvailabilityDates">
+    <Key>
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="_Datetime" />
+      <PropertyRef Name="TableGroupID" />
+    </Key>
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="_Datetime" Type="datetime" Nullable="false" />
+    <Property Name="TableGroupID" Type="int" Nullable="false" />
+    <Property Name="AvailabilityStatus" Type="varchar" MaxLength="1" />
+    <Property Name="CheckOutStatus" Type="varchar" MaxLength="1" />
+    <Property Name="CleaningStatus" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="TableGroups">
+    <Key>
+      <PropertyRef Name="TableGroupID" />
+    </Key>
+    <Property Name="TableGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LayoutID" Type="int" Nullable="false" />
+    <Property Name="TableGroupName" Type="varchar" MaxLength="50" />
+    <Property Name="TableGroupPriority" Type="int" />
+    <Property Name="TableGroupPosX" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TableGroupPosY" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TableGroupImage" Type="varchar" MaxLength="100" />
+    <Property Name="TableGroupActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableInGroups">
+    <Key>
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="TableGroupID" />
+    </Key>
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="TableGroupID" Type="int" Nullable="false" />
+    <Property Name="MaxTableSeatNumber" Type="int" Nullable="false" />
+    <Property Name="TablePosX" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TablePosY" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="RestaurantArea" Type="varchar" MaxLength="50" />
+    <Property Name="RestaurantZone" Type="varchar" MaxLength="5" />
+    <Property Name="RestaurantFloor" Type="int" />
+  </EntityType>
+  <EntityType Name="Tables">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RestaurantID" Type="int" />
+    <Property Name="TableName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TableMaxNumberSeats" Type="int" Nullable="false" />
+    <Property Name="TableImage" Type="varchar" MaxLength="100" />
+    <Property Name="TableImageAvailable" Type="varchar" MaxLength="100" />
+    <Property Name="TableImageUnavailable" Type="varchar" MaxLength="100" />
+    <Property Name="TableImageCheckout" Type="varchar" MaxLength="100" />
+    <Property Name="TableImageCleaning" Type="varchar" MaxLength="100" />
+    <Property Name="TableType" Type="text" />
+    <Property Name="TableSize" Type="text" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="TableActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WaitlistEntry">
+    <Key>
+      <PropertyRef Name="WaitlistEntryID" />
+    </Key>
+    <Property Name="WaitlistEntryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="RestaurantID" Type="int" />
+    <Property Name="PartySize" Type="smallint" Nullable="false" />
+    <Property Name="WaitlistStatus" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EntryOrigin" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CheckinDate" Type="datetime" Nullable="false" />
+    <Property Name="SeatingDate" Type="datetime" />
+    <Property Name="CheckoutDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WaitlistEntryTable">
+    <Key>
+      <PropertyRef Name="TableID" />
+      <PropertyRef Name="WaitlistEntryID" />
+    </Key>
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="WaitlistEntryID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CustomerID_FK">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="ReservationEntry" Type="Self.ReservationEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="ReservationEntry">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerWaitID_FK">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="WaitlistEntry" Type="Self.WaitlistEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="WaitlistEntry">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LayoutID_FK">
+    <End Role="Layouts" Type="Self.Layouts" Multiplicity="1" />
+    <End Role="TableGroups" Type="Self.TableGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layouts">
+        <PropertyRef Name="LayoutId" />
+      </Principal>
+      <Dependent Role="TableGroups">
+        <PropertyRef Name="LayoutID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LayoutRestaurant_FK">
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="1" />
+    <End Role="Layouts" Type="Self.Layouts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantId" />
+      </Principal>
+      <Dependent Role="Layouts">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReservationID_FK">
+    <End Role="ReservationEntry" Type="Self.ReservationEntry" Multiplicity="1" />
+    <End Role="ReservationEntryTable" Type="Self.ReservationEntryTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReservationEntry">
+        <PropertyRef Name="ReservationID" />
+      </Principal>
+      <Dependent Role="ReservationEntryTable">
+        <PropertyRef Name="ReservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RestaurantID_FK">
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="0..1" />
+    <End Role="ReservationEntry" Type="Self.ReservationEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantId" />
+      </Principal>
+      <Dependent Role="ReservationEntry">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RestaurantLayout_FK">
+    <End Role="Layouts" Type="Self.Layouts" Multiplicity="0..1" />
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Layouts">
+        <PropertyRef Name="LayoutId" />
+      </Principal>
+      <Dependent Role="Restaurants">
+        <PropertyRef Name="LayoutActive" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RestaurantWaitID_FK">
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="0..1" />
+    <End Role="WaitlistEntry" Type="Self.WaitlistEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantId" />
+      </Principal>
+      <Dependent Role="WaitlistEntry">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableGroupID_FK">
+    <End Role="TableGroups" Type="Self.TableGroups" Multiplicity="1" />
+    <End Role="TableInGroups" Type="Self.TableInGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableGroups">
+        <PropertyRef Name="TableGroupID" />
+      </Principal>
+      <Dependent Role="TableInGroups">
+        <PropertyRef Name="TableGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableID_FK">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="ReservationEntryTable" Type="Self.ReservationEntryTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="ReservationEntryTable">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableRestaurant_FK">
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="0..1" />
+    <End Role="Tables" Type="Self.Tables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="RestaurantId" />
+      </Principal>
+      <Dependent Role="Tables">
+        <PropertyRef Name="RestaurantID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableWaitID_FK">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="WaitlistEntryTable" Type="Self.WaitlistEntryTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="WaitlistEntryTable">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TAD_TableID_FK">
+    <End Role="TableInGroups" Type="Self.TableInGroups" Multiplicity="1" />
+    <End Role="TableAvailabilityDates" Type="Self.TableAvailabilityDates" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableInGroups">
+        <PropertyRef Name="TableID" />
+        <PropertyRef Name="TableGroupID" />
+      </Principal>
+      <Dependent Role="TableAvailabilityDates">
+        <PropertyRef Name="TableID" />
+        <PropertyRef Name="TableGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TIG_TableID_FK">
+    <End Role="Tables" Type="Self.Tables" Multiplicity="1" />
+    <End Role="TableInGroups" Type="Self.TableInGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tables">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="TableInGroups">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="WaitlistEntryID_FK">
+    <End Role="WaitlistEntry" Type="Self.WaitlistEntry" Multiplicity="1" />
+    <End Role="WaitlistEntryTable" Type="Self.WaitlistEntryTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WaitlistEntry">
+        <PropertyRef Name="WaitlistEntryID" />
+      </Principal>
+      <Dependent Role="WaitlistEntryTable">
+        <PropertyRef Name="WaitlistEntryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TableReadyModel1StoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Layouts" EntityType="Self.Layouts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationEntry" EntityType="Self.ReservationEntry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationEntryTable" EntityType="Self.ReservationEntryTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableAvailabilityDates" EntityType="Self.TableAvailabilityDates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableGroups" EntityType="Self.TableGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TableInGroups" EntityType="Self.TableInGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tables" EntityType="Self.Tables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaitlistEntry" EntityType="Self.WaitlistEntry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WaitlistEntryTable" EntityType="Self.WaitlistEntryTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="CustomerID_FK" Association="Self.CustomerID_FK">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="ReservationEntry" EntitySet="ReservationEntry" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerWaitID_FK" Association="Self.CustomerWaitID_FK">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="WaitlistEntry" EntitySet="WaitlistEntry" />
+    </AssociationSet>
+    <AssociationSet Name="LayoutID_FK" Association="Self.LayoutID_FK">
+      <End Role="Layouts" EntitySet="Layouts" />
+      <End Role="TableGroups" EntitySet="TableGroups" />
+    </AssociationSet>
+    <AssociationSet Name="LayoutRestaurant_FK" Association="Self.LayoutRestaurant_FK">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Layouts" EntitySet="Layouts" />
+    </AssociationSet>
+    <AssociationSet Name="ReservationID_FK" Association="Self.ReservationID_FK">
+      <End Role="ReservationEntry" EntitySet="ReservationEntry" />
+      <End Role="ReservationEntryTable" EntitySet="ReservationEntryTable" />
+    </AssociationSet>
+    <AssociationSet Name="RestaurantID_FK" Association="Self.RestaurantID_FK">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="ReservationEntry" EntitySet="ReservationEntry" />
+    </AssociationSet>
+    <AssociationSet Name="RestaurantLayout_FK" Association="Self.RestaurantLayout_FK">
+      <End Role="Layouts" EntitySet="Layouts" />
+      <End Role="Restaurants" EntitySet="Restaurants" />
+    </AssociationSet>
+    <AssociationSet Name="RestaurantWaitID_FK" Association="Self.RestaurantWaitID_FK">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="WaitlistEntry" EntitySet="WaitlistEntry" />
+    </AssociationSet>
+    <AssociationSet Name="TableGroupID_FK" Association="Self.TableGroupID_FK">
+      <End Role="TableGroups" EntitySet="TableGroups" />
+      <End Role="TableInGroups" EntitySet="TableInGroups" />
+    </AssociationSet>
+    <AssociationSet Name="TableID_FK" Association="Self.TableID_FK">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="ReservationEntryTable" EntitySet="ReservationEntryTable" />
+    </AssociationSet>
+    <AssociationSet Name="TableRestaurant_FK" Association="Self.TableRestaurant_FK">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Tables" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="TableWaitID_FK" Association="Self.TableWaitID_FK">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="WaitlistEntryTable" EntitySet="WaitlistEntryTable" />
+    </AssociationSet>
+    <AssociationSet Name="TAD_TableID_FK" Association="Self.TAD_TableID_FK">
+      <End Role="TableInGroups" EntitySet="TableInGroups" />
+      <End Role="TableAvailabilityDates" EntitySet="TableAvailabilityDates" />
+    </AssociationSet>
+    <AssociationSet Name="TIG_TableID_FK" Association="Self.TIG_TableID_FK">
+      <End Role="Tables" EntitySet="Tables" />
+      <End Role="TableInGroups" EntitySet="TableInGroups" />
+    </AssociationSet>
+    <AssociationSet Name="WaitlistEntryID_FK" Association="Self.WaitlistEntryID_FK">
+      <End Role="WaitlistEntry" EntitySet="WaitlistEntry" />
+      <End Role="WaitlistEntryTable" EntitySet="WaitlistEntryTable" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

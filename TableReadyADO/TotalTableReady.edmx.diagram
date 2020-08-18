@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="af99ad861aed4e0f9fa4056ac6e52534" Name="Diagram1">
+        <EntityTypeShape EntityType="TableReadyModel1.Customer" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.Layout" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.ReservationEntry" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.Restaurant" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.TableAvailabilityDate" Width="1.5" PointX="9.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.TableGroup" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.TableInGroup" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.Table" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel1.WaitlistEntry" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="TableReadyModel1.CustomerID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.CustomerWaitID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.LayoutID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.LayoutRestaurant_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.RestaurantLayout_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.RestaurantID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.RestaurantWaitID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.TableRestaurant_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.TAD_TableID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.TableGroupID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.TIG_TableID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.ReservationEntryTable" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel1.WaitlistEntryTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

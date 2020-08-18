@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TableReadyModelStoreContainer" CdmEntityContainer="TableReadyEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TableReadyModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layouts">
+      <EntityTypeMapping TypeName="TableReadyModel.Layout">
+        <MappingFragment StoreEntitySet="Layouts">
+          <ScalarProperty Name="LayoutId" ColumnName="LayoutId" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+          <ScalarProperty Name="LayoutImage" ColumnName="LayoutImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="TableReadyModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="RestaurantName" ColumnName="RestaurantName" />
+          <ScalarProperty Name="LayoutActive" ColumnName="LayoutActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableGroups">
+      <EntityTypeMapping TypeName="TableReadyModel.TableGroup">
+        <MappingFragment StoreEntitySet="TableGroups">
+          <ScalarProperty Name="TableGroupID" ColumnName="TableGroupID" />
+          <ScalarProperty Name="LayoutID" ColumnName="LayoutID" />
+          <ScalarProperty Name="TableGroupName" ColumnName="TableGroupName" />
+          <ScalarProperty Name="TableGroupPriority" ColumnName="TableGroupPriority" />
+          <ScalarProperty Name="TableGroupPosX" ColumnName="TableGroupPosX" />
+          <ScalarProperty Name="TableGroupPosY" ColumnName="TableGroupPosY" />
+          <ScalarProperty Name="TableGroupImage" ColumnName="TableGroupImage" />
+          <ScalarProperty Name="TableGroupActive" ColumnName="TableGroupActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableInGroups">
+      <EntityTypeMapping TypeName="TableReadyModel.TableInGroup">
+        <MappingFragment StoreEntitySet="TableInGroups">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="TableGroupID" ColumnName="TableGroupID" />
+          <ScalarProperty Name="MaxTableSeatNumber" ColumnName="MaxTableSeatNumber" />
+          <ScalarProperty Name="TablePosX" ColumnName="TablePosX" />
+          <ScalarProperty Name="TablePosY" ColumnName="TablePosY" />
+          <ScalarProperty Name="RestaurantArea" ColumnName="RestaurantArea" />
+          <ScalarProperty Name="RestaurantZone" ColumnName="RestaurantZone" />
+          <ScalarProperty Name="RestaurantFloor" ColumnName="RestaurantFloor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="TableReadyModel.Table">
+        <MappingFragment StoreEntitySet="Tables">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TableMaxNumberSeats" ColumnName="TableMaxNumberSeats" />
+          <ScalarProperty Name="TableImage" ColumnName="TableImage" />
+          <ScalarProperty Name="TableImageAvailable" ColumnName="TableImageAvailable" />
+          <ScalarProperty Name="TableImageUnavailable" ColumnName="TableImageUnavailable" />
+          <ScalarProperty Name="TableImageCheckout" ColumnName="TableImageCheckout" />
+          <ScalarProperty Name="TableImageCleaning" ColumnName="TableImageCleaning" />
+          <ScalarProperty Name="TableType" ColumnName="TableType" />
+          <ScalarProperty Name="TableSize" ColumnName="TableSize" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

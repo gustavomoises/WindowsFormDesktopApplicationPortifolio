@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TableReadyModel1StoreContainer" CdmEntityContainer="TableReadyTotalEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="TableReadyModel1.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerFirstName" ColumnName="CustomerFirstName" />
+          <ScalarProperty Name="CustomerLastName" ColumnName="CustomerLastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Layouts">
+      <EntityTypeMapping TypeName="TableReadyModel1.Layout">
+        <MappingFragment StoreEntitySet="Layouts">
+          <ScalarProperty Name="LayoutId" ColumnName="LayoutId" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+          <ScalarProperty Name="LayoutName" ColumnName="LayoutName" />
+          <ScalarProperty Name="LayoutImage" ColumnName="LayoutImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationEntries">
+      <EntityTypeMapping TypeName="TableReadyModel1.ReservationEntry">
+        <MappingFragment StoreEntitySet="ReservationEntry">
+          <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+          <ScalarProperty Name="PartySize" ColumnName="PartySize" />
+          <ScalarProperty Name="ReservationStatus" ColumnName="ReservationStatus" />
+          <ScalarProperty Name="EntryOrigin" ColumnName="EntryOrigin" />
+          <ScalarProperty Name="CreationDateTime" ColumnName="CreationDateTime" />
+          <ScalarProperty Name="ReservationDateTime" ColumnName="ReservationDateTime" />
+          <ScalarProperty Name="CheckinDateTime" ColumnName="CheckinDateTime" />
+          <ScalarProperty Name="SeatingDateTime" ColumnName="SeatingDateTime" />
+          <ScalarProperty Name="CheckoutDateTime" ColumnName="CheckoutDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="TableReadyModel1.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="RestaurantId" ColumnName="RestaurantId" />
+          <ScalarProperty Name="RestaurantName" ColumnName="RestaurantName" />
+          <ScalarProperty Name="LayoutActive" ColumnName="LayoutActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableAvailabilityDates">
+      <EntityTypeMapping TypeName="TableReadyModel1.TableAvailabilityDate">
+        <MappingFragment StoreEntitySet="TableAvailabilityDates">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="C_Datetime" ColumnName="_Datetime" />
+          <ScalarProperty Name="TableGroupID" ColumnName="TableGroupID" />
+          <ScalarProperty Name="AvailabilityStatus" ColumnName="AvailabilityStatus" />
+          <ScalarProperty Name="CheckOutStatus" ColumnName="CheckOutStatus" />
+          <ScalarProperty Name="CleaningStatus" ColumnName="CleaningStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableGroups">
+      <EntityTypeMapping TypeName="TableReadyModel1.TableGroup">
+        <MappingFragment StoreEntitySet="TableGroups">
+          <ScalarProperty Name="TableGroupID" ColumnName="TableGroupID" />
+          <ScalarProperty Name="LayoutID" ColumnName="LayoutID" />
+          <ScalarProperty Name="TableGroupName" ColumnName="TableGroupName" />
+          <ScalarProperty Name="TableGroupPriority" ColumnName="TableGroupPriority" />
+          <ScalarProperty Name="TableGroupPosX" ColumnName="TableGroupPosX" />
+          <ScalarProperty Name="TableGroupPosY" ColumnName="TableGroupPosY" />
+          <ScalarProperty Name="TableGroupImage" ColumnName="TableGroupImage" />
+          <ScalarProperty Name="TableGroupActive" ColumnName="TableGroupActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableInGroups">
+      <EntityTypeMapping TypeName="TableReadyModel1.TableInGroup">
+        <MappingFragment StoreEntitySet="TableInGroups">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="TableGroupID" ColumnName="TableGroupID" />
+          <ScalarProperty Name="MaxTableSeatNumber" ColumnName="MaxTableSeatNumber" />
+          <ScalarProperty Name="TablePosX" ColumnName="TablePosX" />
+          <ScalarProperty Name="TablePosY" ColumnName="TablePosY" />
+          <ScalarProperty Name="RestaurantArea" ColumnName="RestaurantArea" />
+          <ScalarProperty Name="RestaurantZone" ColumnName="RestaurantZone" />
+          <ScalarProperty Name="RestaurantFloor" ColumnName="RestaurantFloor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="TableReadyModel1.Table">
+        <MappingFragment StoreEntitySet="Tables">
+          <ScalarProperty Name="TableActive" ColumnName="TableActive" />
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="TableMaxNumberSeats" ColumnName="TableMaxNumberSeats" />
+          <ScalarProperty Name="TableImage" ColumnName="TableImage" />
+          <ScalarProperty Name="TableImageAvailable" ColumnName="TableImageAvailable" />
+          <ScalarProperty Name="TableImageUnavailable" ColumnName="TableImageUnavailable" />
+          <ScalarProperty Name="TableImageCheckout" ColumnName="TableImageCheckout" />
+          <ScalarProperty Name="TableImageCleaning" ColumnName="TableImageCleaning" />
+          <ScalarProperty Name="TableType" ColumnName="TableType" />
+          <ScalarProperty Name="TableSize" ColumnName="TableSize" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WaitlistEntries">
+      <EntityTypeMapping TypeName="TableReadyModel1.WaitlistEntry">
+        <MappingFragment StoreEntitySet="WaitlistEntry">
+          <ScalarProperty Name="WaitlistEntryID" ColumnName="WaitlistEntryID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RestaurantID" ColumnName="RestaurantID" />
+          <ScalarProperty Name="PartySize" ColumnName="PartySize" />
+          <ScalarProperty Name="WaitlistStatus" ColumnName="WaitlistStatus" />
+          <ScalarProperty Name="EntryOrigin" ColumnName="EntryOrigin" />
+          <ScalarProperty Name="CheckinDate" ColumnName="CheckinDate" />
+          <ScalarProperty Name="SeatingDate" ColumnName="SeatingDate" />
+          <ScalarProperty Name="CheckoutDate" ColumnName="CheckoutDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ReservationEntryTable" TypeName="TableReadyModel1.ReservationEntryTable" StoreEntitySet="ReservationEntryTable">
+      <EndProperty Name="ReservationEntry">
+        <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+      </EndProperty>
+      <EndProperty Name="Tables">
+        <ScalarProperty Name="TableID" ColumnName="TableID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="WaitlistEntryTable" TypeName="TableReadyModel1.WaitlistEntryTable" StoreEntitySet="WaitlistEntryTable">
+      <EndProperty Name="Tables">
+        <ScalarProperty Name="TableID" ColumnName="TableID" />
+      </EndProperty>
+      <EndProperty Name="WaitlistEntry">
+        <ScalarProperty Name="WaitlistEntryID" ColumnName="WaitlistEntryID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

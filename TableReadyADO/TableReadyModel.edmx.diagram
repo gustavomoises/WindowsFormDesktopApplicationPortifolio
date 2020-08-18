@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec0c369d1cc049c79607a90992354689" Name="Diagram1">
+        <EntityTypeShape EntityType="TableReadyModel.Authentication" Width="1.5" PointX="1.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.AuthenticationMatrix" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.Customer" Width="1.5" PointX="3.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.Employee" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.Layout" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.Owner" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.ReservationEntry" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.RestaurantEmployee" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.RestaurantOwner" Width="1.5" PointX="9" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.Restaurant" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.TableAvailabilityDate" Width="1.5" PointX="9.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.TableGroup" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.TableInGroup" Width="1.5" PointX="7.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.Table" Width="1.5" PointX="11.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.User" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableReadyModel.WaitlistEntry" Width="1.5" PointX="13.5" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="TableReadyModel.AuthenticationUser_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.Matrix_Auth_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.Matrix_Rest_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.CustomerID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.CustomerWaitID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.UserCustomer_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RE_Employees_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.UserEmployee_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.LayoutID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.LayoutRestaurant_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RestaurantLayout_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RO_Owners_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.UserOwner_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RestaurantID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RE_Restaurant_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RO_Restaurant_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.RestaurantWaitID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.TableRestaurant_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.TAD_TableID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.TableGroupID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.TIG_TableID_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.ReservationEntryTable" ManuallyRouted="false" />
+        <AssociationConnector Association="TableReadyModel.WaitlistEntryTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
